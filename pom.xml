@@ -11,11 +11,24 @@
 		<version>1.2.0.RELEASE</version>
 	</parent>
 	
+	<properties>
+		<start-class>br.com.ricardolonga.people.SampleController</start-class>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
+	
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 	
 </project>
