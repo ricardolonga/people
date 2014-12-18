@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,9 +38,9 @@ public class SampleController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/pessoas", method = RequestMethod.DELETE, consumes = { "application/json" })
-    public void remover(@RequestBody Pessoa pessoa) {
-        pessoas.remove(pessoa);
+    @RequestMapping(value = "/pessoas/{name}", method = RequestMethod.DELETE)
+    public void remover(@PathVariable("name") String name) {
+        pessoas.remove(new Pessoa(name));
     }
 
     public static void main(String[] args) throws Exception {
