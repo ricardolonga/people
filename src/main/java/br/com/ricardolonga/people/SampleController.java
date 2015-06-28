@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @EnableAutoConfiguration
 public class SampleController {
 
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(SampleController.class, args);
+    }
+    
     private Set<Pessoa> pessoas = new HashSet<Pessoa>();
 
     public SampleController() {
@@ -43,8 +47,6 @@ public class SampleController {
         pessoas.remove(new Pessoa(name));
     }
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleController.class, args);
-    }
+    
 
 }
